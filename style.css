@@ -1,3 +1,17 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+    box-sizing: border-box;
+    border-width: 0;
+    border-style: solid;
+    border-color: #e5e7eb;
+}
+
+html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +22,7 @@ body {
 }
 
 h1 {
-    margin-top: 20px;
+    margin-top: 50px;
     font-size: 3rem;
 }
 
@@ -71,7 +85,7 @@ h1 {
 
 /* Po krádeži */
 .grinch.stealing {
-    content: url("https://i.ibb.co/bgPz9nRn/Grinch.png"); /* grinch s pytlem */
+    content: url("https://i.ibb.co/bgPz9nRn/Grinch.png");
 }
 
 
@@ -165,109 +179,72 @@ h1 {
 
 
 
-
-
 /* ==========================
-   🎄 RESPONZIVITA – MOBIL
+   📱 MOBIL – OPRAVA SVĚTÝLEK
    ========================== */
 @media (max-width: 768px) {
 
+    body {
+        padding-top: 20px !important;
+    }
+
     h1 {
         font-size: 2rem;
-        margin-top: 10px;
     }
 
     #countdown {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
+        font-size: 1.5rem;
     }
 
-    /* 🎄 Stromek */
-    .tree img {
-        width: 70%;
-    }
-
-    /* 🎁 Dárky */
-    .gift {
-        width: 70px;
-        height: 70px;
-    }
-
-    .gifts {
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 5px;
-    }
-
-    /* 💚 Grinch */
-    .grinch {
-        width: 180px;
-        bottom: -10px;
-    }
-
-    /* 💡 Světýlka */
     .xmas-lights {
-        gap: 25px;          /* menší mezery mezi žárovkami */
-        padding-top: 15px;
-        margin-top: 25px;
-    }
-
-    .bulb {
-        width: 12px;
-        height: 20px;
-        border-radius: 50% 50% 35% 35%;
-    }
-
-    .bulb::before {
-        width: 10px;
-        height: 6px;
-        top: -5px;
+        gap: 15px;
+        padding-top: 0;
+        margin-top: 0;
+        transform-origin: top center;
+        transform: scale(1.7);
     }
 
     .xmas-lights::before {
-        height: 3px;        /* tenčí lanko */
-        top: 0;
-    }
-}
-
-/* ==========================
-   📱 MALÉ MOBILY
-   ========================== */
-@media (max-width: 480px) {
-
-    h1 {
-        font-size: 1.6rem;
-    }
-
-    #countdown {
-        font-size: 1.1rem;
-    }
-
-    .xmas-lights {
-        gap: 18px;
-        padding-top: 12px;
+        height: 6px;
+        top: -10px;
     }
 
     .bulb {
         width: 10px;
-        height: 18px;
+        height: 20px;
     }
 
     .bulb::before {
-        width: 8px;
+        width: 16px;
+        height: 10px;
+        top: -8px;
+    }
+
+    .tree {
+        height: 100%;
+        width: 100%;
+    }
+
+    .gifts {
+        bottom: 60px;
+    }
+
+
+}
+
+
+/* ==========================
+   📱 EXTRA – ÚZKÉ MOBILY
+   ========================== */
+@media (max-width: 480px) {
+    .xmas-lights {
+        transform: scale(1.7);
+        gap: 15px;
+    }
+
+
+    .bulb::before {
+        width: 9px;
         height: 5px;
-    }
-
-    .grinch {
-        width: 150px;
-    }
-
-    .gift {
-        width: 60px;
-        height: 60px;
-    }
-
-    .tree img {
-        width: 60%;
     }
 }
